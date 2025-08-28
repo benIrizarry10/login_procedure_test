@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="card">
+    <h2>Welcome{% if user %}, {{ user }}{% endif %}</h2>
+    {% if user %}
+      <a href="{{ url_for('send') }}">Send a Message</a>
+      <a href="{{ url_for('inbox') }}">Check Inbox</a>
+      <a href="{{ url_for('reset') }}">Reset Password</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('register') }}">Register</a>
+    {% endif %}
+  </div>
+</body>
+</html>
+
+

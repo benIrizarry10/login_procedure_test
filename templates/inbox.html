@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inbox</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="card">
+    <h2>Your Inbox</h2>
+    {% if message %}
+      <div class="message-box">
+        <p><strong>From:</strong> {{ sender }}</p>
+        <p>{{ message }}</p>
+      </div>
+    {% else %}
+      <p>No new messages.</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Back to Home</a>
+  </div>
+</body>
+</html>

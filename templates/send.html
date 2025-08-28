@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send Message</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Send a Message</h2>
+
+    {% if success %}
+      <p class="success-message">✅ Message sent successfully!</p>
+      <a href="{{ url_for('index') }}" class="button">Return to Home</a>
+    {% else %}
+      <form method="post">
+        <input type="text" name="to" placeholder="Recipient Username" required>
+        <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <a href="{{ url_for('index') }}">Back to Home</a>
+    {% endif %}
+  </div>
+</body>
+</html>

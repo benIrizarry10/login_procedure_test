@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="card">
+    <h2>Welcome back</h2>
+    <form method="post">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="text" name="mfa" placeholder="MFA Code" required>
+      <button type="submit">Login</button>
+    </form>
+    <a href="{{ url_for('register') }}">Don't have an account? Sign up</a>
+  </div>
+</body>
+</html>
